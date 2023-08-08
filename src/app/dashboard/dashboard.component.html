@@ -1,0 +1,19 @@
+<!-- <p *ngFor='let i of employeeData' style="margin-left: 40%;"> {{i}} </p> -->
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Sap ID</th>
+            <th>Designation</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let i of employeeData'>
+            <th>{{i.name}}</th>
+            <th>{{i.ID}}</th>
+            <th>{{i.Designation}}</th>
+            <th>{{i.Location}}</th>
+        </tr>
+    </tbody>
+</table>
