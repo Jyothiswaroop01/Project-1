@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,17 +8,5 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
-  employeeData: empData[] = [
-    {name:'Swaroop', ID:'52129250',Designation:'GET',Location:'Chennai'},
-    {name:'Subhash', ID:'52129225',Designation:'GET',Location:'Chennai'},
-    {name:'Viswa', ID:'52129836',Designation:'GET',Location:'Chennai'},
-    {name:'Mahanth', ID:'52129926',Designation:'GET',Location:'Chennai'}
-  ]
-}
-
-class empData{
-  name? : string;
-  ID? : string;
-  Designation? : string;
-  Location? : string;
+constructor(public Employeedetails: MyserviceService){}
 }

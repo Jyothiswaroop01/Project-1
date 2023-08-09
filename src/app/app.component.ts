@@ -12,7 +12,8 @@ export class AppComponent {
 
    }
   LClick(){
-  this.router.navigate(['login']);
+    this.title = 'new one';
+    this.router.navigate(['login']);
   }
   DClick(){
   this.router.navigate(['dashboard']);

@@ -1,4 +1,3 @@
-<!-- <p *ngFor='let i of employeeData' style="margin-left: 40%;"> {{i}} </p> -->
 <table>
     <thead>
         <tr>
@@ -9,7 +8,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let i of employeeData'>
+        <tr *ngFor='let i of Employeedetails.getdetails()'>
             <th>{{i.name}}</th>
             <th>{{i.ID}}</th>
             <th>{{i.Designation}}</th>
@@ -17,3 +16,4 @@
         </tr>
     </tbody>
 </table>
+
