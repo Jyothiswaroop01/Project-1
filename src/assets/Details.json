@@ -1,0 +1,47 @@
+{
+  "Data": [
+    {
+      "id": 1,
+      "Image": "https://th.bing.com/th/id/OIP.e6900wBWa2sAD14Po7ZYKAAAAA?pid=ImgDet&rs=1",
+      "Name": "Oneplus 10R",
+      "Price": 25000,
+      "Desc": "Black 8GB 128GB"
+    },
+    {
+      "id": 2,
+      "Image": "https://th.bing.com/th/id/OIP.EhTUNAsFhJQ9Wu2inwuvYQHaHa?pid=ImgDet&rs=1",
+      "Name": "Realme GT Neo 2",
+      "Price": 25000,
+      "Desc": "Black 8GB 128GB"
+    },
+    {
+      "id": 3,
+      "Name": "Redmi note 11 pro",
+      "Desc": "Black 8GB 128GB",
+      "Image": "https://specifications-pro.com/wp-content/uploads/2021/10/Xiaomi-Redmi-Note-11-Pro-Plus-1.jpg",
+      "Price": 25000
+    },
+    {
+      "id": 4,
+      "Image": "https://www.switchrentals.co.uk/app/uploads/sites/2/samsung-S23--scaled.jpg",
+      "Name": "Samsung S23",
+      "Price": 25000,
+      "Desc": "Black 8GB 128GB\n"
+    }
+  ],
+  "Login": [
+    {
+      "fullName": "Swaroop",
+      "email": "naniswaroop01@gmail.com",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "fullName": "Nani",
+      "email": "naniswaroop11@gmail.com",
+      "password": "Swaroop",
+      "id": 2
+    }
+  ],
+  "Cart": []
+}

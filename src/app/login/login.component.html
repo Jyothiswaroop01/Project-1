@@ -1,17 +1,22 @@
-<!-- <br><br><br>
-<p style="margin-left: 40%;">UserName:<input type="text" width = "20px" style="margin-left: 10px;" placeholder="Enter Username" ></p>
-<p style="margin-left: 40%;">Password:<input type="password" [(ngModel)]="dynamicTxt" width = "20px" style="margin-left: 15px;" placeholder="Enter Password"></p>
-<p style="margin-left: 40%;">{{dynamicTxt}}</p>
-<button style="margin-left: 49%;" ((click))="check()">Submit</button> -->
+<mat-card style="margin-left: 40%;width:20%;margin-top:5%">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header><hr>
+  <mat-card-content>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
 
-<div class="login-container">
-    <h2 style="text-align: center;">Login</h2>
-    <form (ngSubmit)="login()" style="margin-left: 40%;">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" [(ngModel)]="username" required><br><br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="password" required><br><br>
-      <button type="submit" style="margin-left:15%">Login</button>
-    </form>
-  </div>
-  
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="email" required>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" [(ngModel)]="password" required>
+      </mat-form-field><br>
+
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </form><br>
+    <p>Not Registered..? <a routerLink="/register">Click Here</a></p>
+  </mat-card-content>
+</mat-card>

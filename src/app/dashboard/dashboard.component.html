@@ -1,19 +1,30 @@
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Sap ID</th>
-            <th>Designation</th>
-            <th>Location</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor='let i of Employeedetails.getdetails()'>
-            <th>{{i.name}}</th>
-            <th>{{i.ID}}</th>
-            <th>{{i.Designation}}</th>
-            <th>{{i.Location}}</th>
-        </tr>
-    </tbody>
-</table>
+<button mat-raised-button (click)="Home()" style="margin-left:70%">Home</button>
+<button mat-raised-button (click)="Cart()" style="margin-left:5%">Cart</button>
+<button mat-raised-button color="warn" (click)="Logout()" style="margin-left:5%">Logout</button>
 
+<div class="row">
+    <div class="column" *ngFor="let item of items">
+        <mat-card>
+            <mat-card-content>
+                <img src={{item.Image}} alt="image" style="width: 100px; height: 100px;"><br>
+                <p>{{ item.Name }}</p>
+                <p>{{ item.Desc }}</p>
+                <p>{{ item.Price }}</p>
+                <button mat-raised-button (click)="Addtocart(item)">Add to Cart</button>
+                <button mat-raised-button color="primary" (click)="getProductDetails(item.id)" style="margin-left:30px">Details</button>
+            </mat-card-content>
+        </mat-card><br><br>
+    </div>
+</div>
+<div *ngIf="selectedProduct">
+    <mat-card style="width: 30%; margin-left: 35%;">
+        <mat-card-content>
+                <h3 style="font-weight: bold;">Selected Product Details:</h3>
+                Name: {{ selectedProduct.Name }}<br>
+                Price: {{ selectedProduct.Price }}<br>
+                Description: {{ selectedProduct.Desc }}<br><hr>
+                <button mat-raised-button color="warn" (click)="Addtocart(selectedProduct)"style="margin-left:30%">Add to Cart</button>
+        </mat-card-content>
+    </mat-card><br><br>
+</div>
+  

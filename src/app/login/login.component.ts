@@ -9,20 +9,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  dynamicTxt:string = '';
+  email:any="";
+  password:any="";
+  constructor(private router:Router, public objservice:MyserviceService){}
 
-  constructor(private router: Router){
-  }
-  username?: string = '';
-  password?: string = '';
-
-  login() {
-    if (this.username == 'Swaroop' && this.password == 'password') {
-      console.log('Login successful');
+  onSubmit() {
+    if (this.objservice.login(this.email, this.password)) {
       this.router.navigate(['dashboard']);
     } else {
-      console.log('Login failed');
-      alert('In correct Login details')
+      alert('Login failed');
     }
   }
 }
