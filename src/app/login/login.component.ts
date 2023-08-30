@@ -15,7 +15,7 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.objservice.login(this.email, this.password)) {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['products']);
     } else {
       alert('Login failed');
     }

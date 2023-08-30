@@ -40,7 +40,7 @@ export class CartComponent {
     this.location.replaceState('/');
   }
   Home(){
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['products']);
   }
   Cart(){
     this.router.navigate(['cart']);

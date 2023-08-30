@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { MyserviceService } from '../myservice.service';
 import { Router } from '@angular/router';
+import { MyserviceService } from '../myservice.service';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
 })
-export class DashboardComponent {
+export class ProductsComponent {
 
+  
 constructor(public serviceobj: MyserviceService, public router:Router, public location:Location){}
 
 items: any[] = [];
@@ -22,7 +23,9 @@ ngOnInit(): void {
     this.items = data;
     this.dataSource = this.items;
     console.log(this.dataSource)
-  });
+  }, err => {
+    console.log('Unable to fetch Data');
+  })
 }
 Addtocart(data:any){
     
@@ -32,7 +35,7 @@ Addtocart(data:any){
     alert('Items Added Sucessfully');
     
   }, err => {
-
+    console.log('Unable to add Items');
   })
 }
 getProductDetails(productId: number) {
@@ -51,7 +54,7 @@ Logout()
   this.location.replaceState('/');
 }
 Home(){
-  this.router.navigate(['dashboard']);
+  this.router.navigate(['products']);
 }
 Cart(){
   this.router.navigate(['cart']);
