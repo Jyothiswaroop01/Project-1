@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { MyserviceService } from '../myservice.service';
 import { Router } from '@angular/router';
 
@@ -11,11 +11,15 @@ export class LoginComponent {
 
   email:any="";
   password:any="";
-  constructor(private router:Router, public objservice:MyserviceService){}
 
+
+  constructor(private router:Router, public objservice:MyserviceService){}
+  
   onSubmit() {
     if (this.objservice.login(this.email, this.password)) {
-      this.router.navigate(['products']);
+      const text = this.email;
+      console.log(text);
+      this.router.navigate(['products'],{queryParams:{text},});
     } else {
       alert('Login failed');
     }

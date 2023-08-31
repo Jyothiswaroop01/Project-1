@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component,Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MyserviceService } from '../myservice.service';
 import { Location } from '@angular/common';
 
@@ -10,15 +10,19 @@ import { Location } from '@angular/common';
 })
 export class ProductsComponent {
 
-  
-constructor(public serviceobj: MyserviceService, public router:Router, public location:Location){}
+  @Input() text?: string;
+constructor(public serviceobj: MyserviceService, public router:Router, public location:Location, private route: ActivatedRoute){}
 
 items: any[] = [];
 dataSource:any[] = [];
 selectedProduct: any;
 displayedColumns: string[] = ['id', 'Name', 'Desc', 'Price', 'Image'];
 
+
 ngOnInit(): void {
+  // this.route.queryParams.subscribe(params => {
+  //   this.text = params['text'];
+  // });
   this.serviceobj.getproductdata().subscribe(data => {
     this.items = data;
     this.dataSource = this.items;
@@ -42,6 +46,7 @@ getProductDetails(productId: number) {
   this.serviceobj.getProductById(productId).subscribe(
     (data: any) => {
       this.selectedProduct = data;
+      this.router.navigate(['productdetailss']);
     },
     (      error: any) => {
       console.error(error);

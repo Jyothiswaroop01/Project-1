@@ -1,7 +1,6 @@
 <button mat-raised-button (click)="Home()" style="margin-left:70%">Home</button>
 <button mat-raised-button (click)="Cart()" style="margin-left:5%">Cart</button>
 <button mat-raised-button color="warn" (click)="Logout()" style="margin-left:5%">Logout</button><br><br>
-
 <mat-card *ngFor="let item of items">
     <mat-card-content>
         <img src={{item.Image}} alt="image" style="width: 100px; height: 70px; float: left;">
@@ -9,4 +8,5 @@
         <p style="float: left;text-align: left;font-weight: bold;margin-left: 10%;margin-top: 20px;">{{ item.Name }} &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; {{ item.Desc }} &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; {{ item.Price }}</p>
     </mat-card-content>
 </mat-card><br><br>
+
 

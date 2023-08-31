@@ -9,7 +9,9 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'cart', component:CartComponent},
-  {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) }
+  {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
+  { path: 'component', loadChildren: () => import('./component/component.module').then(m => m.ComponentModule) }
+  
 ];
 
 @NgModule({

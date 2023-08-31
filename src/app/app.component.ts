@@ -8,15 +8,14 @@ import { Route, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Project-1';
+  currentName = "Nani";
   constructor(private router: Router){
 
    }
   LClick(){
-    this.title = 'new one';
     this.router.navigate(['login']);
   }
   DClick(){
   this.router.navigate(['dashboard']);
   }
-
 }
